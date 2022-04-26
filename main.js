@@ -95,6 +95,7 @@ class Camera {
             context.drawImage(this.video, 0, 0, this.width, this.height);
             
             var data = this.canvas.toDataURL('image/png');
+            console.log(data);
             this.photo.setAttribute('src', data);
         } else {
             this.clearphoto();
