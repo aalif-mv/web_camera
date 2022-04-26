@@ -26,7 +26,7 @@ class Camera {
     static startup() {
         if (this.showViewLiveResultButton()) { return; }
         this.video = document.getElementById('video');
-        this.canvas = document.createElement('canvas');
+        this.canvas = document.getElementById('canvas');
         this.photo = document.getElementById('photo');
         this.startbutton = document.getElementById('startbutton');
 
@@ -82,6 +82,7 @@ class Camera {
         ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
 
         var data = this.canvas.toDataURL('image/png');
+        console.log(data);
         this.photo.setAttribute('src', data);
     }
 
@@ -90,6 +91,7 @@ class Camera {
         if (this.width && this.height) {
             this.canvas.width = this.width;
             this.canvas.height = this.height;
+            console.log(this.video);
             context.drawImage(this.video, 0, 0, this.width, this.height);
             
             var data = this.canvas.toDataURL('image/png');
