@@ -16,10 +16,6 @@ body {
     height:240px;
 }
 
-#canvas {
-    display:none;
-}
-
 .camera {
     display: flex;
     flex-direction: column;
